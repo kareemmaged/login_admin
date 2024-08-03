@@ -1,0 +1,194 @@
+@font-face {
+  font-family: Poppins;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: Azonix;
+  src: url(../fonts/Azonix.otf);
+}
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: Poppins;
+}
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* add this line */
+}
+
+.main_bdy {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  //background-color: white;
+}
+
+.lft_bdy {
+  margin: 15% 0% 0% 5%;
+  width: 50%;
+  height: 50vh;
+  position: relative;
+}
+
+.lft_bdy h1 {
+  font-family: Azonix;
+  font-size: 50px;
+  color: white;
+  padding-bottom: 10%;
+}
+
+.lft_bdy h2 {
+  color: white;
+  padding-bottom: 5%;
+}
+
+.lft_bdy button {
+  margin-top: 5%;
+  position: absolute;
+  bottom: 10%;
+  left: 8.5%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.lft_bdy button:focus,
+.lft_bdy button:hover {
+  color: #fff;
+}
+
+.lft_bdy button:focus:after,
+.lft_bdy button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.lft_bdy button:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.right_bdy {
+  width: 70%;
+  height: 60vh;
+  padding-top: 5%;
+  margin-top: 10%;
+}
+
+#right_bdy_box {
+  margin: 0 auto;
+  width: 50%;
+  height: 50vh;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+
+  backdrop-filter: blur(5px);
+}
+
+#right_bdy_box h1 {
+  margin: 0 auto;
+  width: 20%;
+  font-size: 35px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: white;
+}
+
+#right_bdy_box form {
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#right_bdy_box form input {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+#right_bdy_box form input::placeholder {
+  color: white;
+  text-align: left;
+}
+
+#right_bdy_box button {
+  --color: white;
+  padding: 2% 20% 2% 20%;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  /* text-transform: uppercase; */
+  color: var(--color);
+  z-index: 1;
+}
+
+#right_bdy_box button::before,
+#right_bdy_box button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+#right_bdy_box button::before {
+  top: -1em;
+  left: -1em;
+}
+
+#right_bdy_box button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+#right_bdy_box button:hover::before,
+.button:hover::after {
+  height: 510px;
+  width: 510px;
+}
+
+#right_bdy_box button:hover {
+  color: black;
+}
